@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "hello-type-script-azure",
   "version": "",
   "scripts": {
     "build": "tsc",
@@ -11,8 +11,12 @@
     "test": "echo \"No tests yet...\""
   },
   "description": "",
-  "devDependencies": {
+  "dependencies": {
     "@azure/functions": "^1.0.1-beta1",
+    "@newrelic/telemetry-sdk": "^0.4.0",
+    "@types/node": "^14.14.35"
+  },
+  "devDependencies": {
     "npm-run-all": "^4.1.5",
     "typescript": "^3.3.3"
   }
