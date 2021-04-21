@@ -2,5 +2,6 @@
 *.ts
 .git*
 .vscode
+.idea
 local.settings.json
 test
