@@ -16,9 +16,11 @@ jobs:
       - run: npm install
       - run: npm run build:production
       - run: zip -r function.zip . --exclude @.funcignore --exclude .funcignore
+      - run: mkdir archive
+      - run: unzip function.zip -d archive
       - uses: actions/upload-artifact@v2
         with:
-          name: function-zip-zip.zip
-          path: function.zip
+          name: function
+          path: archive/**
           retention-days: 1
       - run: echo "🍏 This job's status is ${{ job.status }}."
