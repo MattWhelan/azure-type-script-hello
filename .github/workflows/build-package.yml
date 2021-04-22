@@ -1,0 +1,26 @@
+name: Build and Package
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  Build-Package:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sudo apt-get install azure-functions-core-tools-3
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+      - run: npm install
+      - run: npm run build:production
+      - run: zip -r function.zip . --exclude @.funcignore --exclude .funcignore
+      - run: mkdir archive
+      - run: unzip function.zip -d archive
+      - uses: actions/upload-artifact@v2
+        with:
+          name: function
+          path: archive/**
+          retention-days: 1
+      - run: echo "🍏 This job's status is ${{ job.status }}."
