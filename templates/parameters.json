@@ -1,0 +1,48 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptionId": {
+            "value": "3f08dfdf-8dff-4d1f-a974-b6216a075b4e"
+        },
+        "name": {
+            "value": "type-script-hello"
+        },
+        "location": {
+            "value": "West US 2"
+        },
+        "hostingPlanName": {
+            "value": "ASP-mwhelanhello-b72d"
+        },
+        "serverFarmResourceGroup": {
+            "value": "mwhelan-hello"
+        },
+        "alwaysOn": {
+            "value": false
+        },
+        "storageAccountName": {
+            "value": "storageaccountmwhelb140"
+        },
+        "sku": {
+            "value": "Dynamic"
+        },
+        "skuCode": {
+            "value": "Y1"
+        },
+        "workerSize": {
+            "value": "0"
+        },
+        "workerSizeId": {
+            "value": "0"
+        },
+        "numberOfWorkers": {
+            "value": "1"
+        },
+        "use32BitWorkerProcess": {
+            "value": true
+        },
+        "packageUri": {
+            "value": "https://mwhelanhellozips.blob.core.windows.net/zips/function.zip"
+        }
+    }
+}
